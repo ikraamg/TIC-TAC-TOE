@@ -38,12 +38,9 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
-
 Style/HashEachMethods:
-  Enabled: true
-
+  Enabled: false
 Style/HashTransformKeys:
-  Enabled: true
-
+  Enabled: false
 Style/HashTransformValues:
-  Enabled: true
+  Enabled: false
