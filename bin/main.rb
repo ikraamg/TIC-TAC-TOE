@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-puts 'Hello!'
-
 def greeting
-  puts "Welcome to TicTacToe game!"
+  puts 'Welcome to TicTacToe game!'
 end
 
 def create_board
@@ -26,7 +24,9 @@ def draw_grid(array)
   hypens_w_nl = "-------------------\n"
   puts "\n  " + hypens
   3.times do |i|
-    print '  | ', array[i * 3], ' | ', array[i * 3 + 1], ' | ', array[i * 3 + 2], " |\n  #{hypens_w_nl if i < 2}"
+    print '  | ', array[i * 3], ' | ', array[i * 3 + 1], ' | ', array[i * 3 + 2], " |\n  #{if i < 2
+                                                                                             hypens_w_nl
+                                                                                           end}"
   end
   puts hypens
 end
@@ -41,7 +41,7 @@ end
 
 def question(turn)
   turn = turn.even? ? 'X' : 'O'
-  text = "Make your move #{turn} (1..9):"
+  text = "Now it is your turn #{turn}. Make your move! (1..9):"
   slow_typing(text, 1)
   loop do
     answer = gets.chomp!.to_i
@@ -51,10 +51,16 @@ def question(turn)
   end
 end
 
-# greeting
-# 
-# board = create_board
-# 
-# show_board(board)
-# 
-# question(0)
+def play
+  greeting
+
+  board = create_board
+
+  show_board(board)
+
+  9.times do |turn|
+    question(turn)
+  end
+end
+
+play
