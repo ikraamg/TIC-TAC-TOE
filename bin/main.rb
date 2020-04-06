@@ -72,6 +72,18 @@ class Game
     end_message
   end
 
+  def auto_play(scenario)
+    greeting
+    9.times do |turn|
+      show_board(@board)
+      puts move = scenario[turn]
+      sleep 0.5
+      redo if check_spot(move, turn) == 'jump_next'
+      break if check_game == true
+    end
+    end_message
+  end
+
   private
 
   def greeting
