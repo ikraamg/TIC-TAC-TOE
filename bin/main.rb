@@ -49,7 +49,7 @@ module QuestionMaker
 
   def question(turn)
     turn_sign = turn.even? ? 'X' : 'O'
-    text = "Make your move #{@names[turn]} #{turn_sign} (1..9):"
+    text = "Make your move #{@names[turn]} (#{turn_sign}) (1..9):"
     slow_typing(text, 1)
     loop do
       answer = gets.chomp!.to_i
@@ -176,13 +176,12 @@ class TicTacToe < Game
   end
 
   def win_message
-    return "#{@names[0]} WIN!" if calculate_board.include?(3)
-    return "#{@names[1]} WIN!" if calculate_board.max == 30
+    return "#{@names[0]} WINS!" if calculate_board.include?(3)
+    return "#{@names[1]} WINS!" if calculate_board.max == 30
 
     "That's a draw!".upcase
   end
 end
 
 new_game = TicTacToe.new
-#new_game.auto_play([1, 2, 3, 4, 5, 6, 7, 8, 9])
 new_game.play
