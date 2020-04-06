@@ -8,7 +8,12 @@
 
 This game is played on a 3 x 3 grid between two players. The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
 
-_In this step we created two folders, bin and lib. The game executable file was created, main.rb and is contaiend in the bin folder._
+_In this step we created basic game flow which takes an input from the player and prompts a message with board layout. We are not diving into game details yet._
+
+## Live Link
+
+[Demo Link Milestone-2](https://repl.it/@kblycaglayan/TTTmilestone2)
+
 
 ## Built With
 
