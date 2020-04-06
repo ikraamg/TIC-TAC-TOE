@@ -2,19 +2,17 @@
 
 [![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20Kubilay-Click%20to%20Contact-brightgreen)](mailto:kblycaglayan@gmail.com) [![Twitter Follow](https://img.shields.io/twitter/follow/kbcaglayan?label=Follow%20Kubilay%20on%20Twitter&style=social)](https://twitter.com/kbcaglayan)
 
-# 
+# TIC-TAC-TOE
 
-> 
+> This game is a virtual implementation of the classic tic-tac-toe game.
 
+This game is played on a 3 x 3 grid between two players. The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
 
+_In this step we created two folders, bin and lib. The game executable file was created, main.rb and is contaiend in the bin folder._
 
 ## Built With
 
-- Ruby.
-
-## Live Demo
-
-[Live Demo Link]()
+- Ruby
 
 ## Getting Started
 
@@ -23,21 +21,10 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 - Ruby installed on local machine
-- A browser (for usage or repl.it)
 
 ### Usage
 
-#### Preview with repl.it in [Live Demo Link]()
-
-OR:
-
 - Fork/Clone this project to your local machine
-- 
-
-```
-## Testing 
-
-## Testing 
 
 ## Authors
 
@@ -59,7 +46,7 @@ OR:
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page]()
+Feel free to check the [issues page](https://github.com/ikraamg/TIC-TAC-TOE/issues)
 
 Start by:
 
