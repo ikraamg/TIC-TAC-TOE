@@ -42,9 +42,14 @@ module Visualizer
 end
 
 module QuestionMaker
+  def ask(text)
+    puts text
+    gets.chomp!
+  end
+
   def question(turn)
-    turn = turn.even? ? 'X' : 'O'
-    text = "Make your move #{turn} (1..9):"
+    turn_sign = turn.even? ? 'X' : 'O'
+    text = "Make your move #{@names[turn]} #{turn_sign} (1..9):"
     slow_typing(text, 1)
     loop do
       answer = gets.chomp!.to_i
@@ -60,17 +65,12 @@ class Game
   include Visualizer
   def initialize
     @board = create_board
-    @names = player_names
   end
 
   def player_names
-    puts 'Enter player 1 name:'
-    name = gets.chomp!
-    player1 = Player.new(name)
-    puts 'Enter player 2 name:'
-    name = gets.chomp!
-    player2 = Player.new(name)
-    [player1.name, player2.name]
+    player1 = Player.new(ask('Enter player 1 name:'))
+    player2 = Player.new(ask('Enter player 2 name:'))
+    @names = [player1.name, player2.name] * 5
   end
 
   def play
@@ -89,7 +89,7 @@ class Game
     9.times do |turn|
       show_board(@board)
       puts move = scenario[turn]
-      sleep 0.5
+      sleep 1
       redo if check_spot(move, turn) == 'jump_next'
       break if check_game == true
     end
@@ -101,6 +101,7 @@ class Game
   def greeting
     show_board_hint(@board)
     puts "Welcome to #{@name} game..."
+    player_names
   end
 
   def create_board
@@ -183,4 +184,5 @@ class TicTacToe < Game
 end
 
 new_game = TicTacToe.new
-new_game.auto_play([1, 2, 3, 4, 5, 6, 7, 8, 9])
+#new_game.auto_play([1, 2, 3, 4, 5, 6, 7, 8, 9])
+new_game.play
