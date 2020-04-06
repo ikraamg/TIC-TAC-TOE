@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
 def greeting
   puts 'Welcome to TicTacToe game!'
 end
@@ -24,9 +22,7 @@ def draw_grid(array)
   hypens_w_nl = "-------------------\n"
   puts "\n  " + hypens
   3.times do |i|
-    print '  | ', array[i * 3], ' | ', array[i * 3 + 1], ' | ', array[i * 3 + 2], " |\n  #{if i < 2
-                                                                                             hypens_w_nl
-                                                                                           end}"
+    print '  | ', array[i * 3], ' | ', array[i * 3 + 1], ' | ', array[i * 3 + 2], " |\n  #{hypens_w_nl if i < 2}"
   end
   puts hypens
 end
