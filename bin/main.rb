@@ -54,27 +54,32 @@ module QuestionMaker
   end
 end
 
-def greeting
-  puts 'Welcome to TicTacToe game!'
-end
+class Game
+  include QuestionMaker
+  include Visualizer
+  def initialize
+    @board = create_board
+  end
 
-def create_board
-  Array.new(9, 0)
-end
+  def play
+    greeting
+    9.times do |turn|
+      show_board(@board)
+      move = question(turn)
+      redo if check_spot(move, turn) == 'jump_next'
+      break if check_game == true
+    end
+    end_message
+  end
 
-def play
-  greeting
+  private
 
-  board = create_board
+  def greeting
+    show_board_hint(@board)
+    puts "Welcome to #{@name} game..."
+  end
 
-  show_board(board)
-
-  9.times do |turn|
-    print "\nThis is turn: #{turn + 1} out of 9\n "
-    question(turn)
-    puts '(Your move is displayed on the board below)'
-    show_board(board)
+  def create_board
+    Array.new(9, 0)
   end
 end
-
-play
