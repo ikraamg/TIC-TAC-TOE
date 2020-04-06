@@ -155,5 +155,18 @@ class TicTacToe < Game
     return true unless @board.include?(0)
   end
 
-  
+  def end_message
+    puts '______________________'
+    puts 'game over'.upcase
+    show_board(@board)
+    puts win_message
+    puts '______________________'
+  end
+
+  def win_message
+    return 'X WIN!' if calculate_board.include?(3)
+    return 'O WIN!' if calculate_board.max == 30
+
+    "That's a draw!".upcase
+  end
 end
