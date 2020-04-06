@@ -106,7 +106,6 @@ class TicTacToe < Game
     'This is a TIC TAC TOE game!'
   end
 
-
   private
 
   def check_spot(move, turn)
@@ -170,3 +169,6 @@ class TicTacToe < Game
     "That's a draw!".upcase
   end
 end
+
+new_game = TicTacToe.new
+new_game.auto_play([1, 2, 3, 4, 5, 6, 7, 8, 9])
