@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require_relative '../lib/players.rb'
 
 module Visualizer
   def slow_typing(text, speed)
@@ -59,6 +60,17 @@ class Game
   include Visualizer
   def initialize
     @board = create_board
+    @names = player_names
+  end
+
+  def player_names
+    puts 'Enter player 1 name:'
+    name = gets.chomp!
+    player1 = Player.new(name)
+    puts 'Enter player 2 name:'
+    name = gets.chomp!
+    player2 = Player.new(name)
+    [player1.name, player2.name]
   end
 
   def play
@@ -163,8 +175,8 @@ class TicTacToe < Game
   end
 
   def win_message
-    return 'X WIN!' if calculate_board.include?(3)
-    return 'O WIN!' if calculate_board.max == 30
+    return "#{@names[0]} WIN!" if calculate_board.include?(3)
+    return "#{@names[1]} WIN!" if calculate_board.max == 30
 
     "That's a draw!".upcase
   end
