@@ -40,24 +40,26 @@ module Visualizer
   end
 end
 
+module QuestionMaker
+  def question(turn)
+    turn = turn.even? ? 'X' : 'O'
+    text = "Make your move #{turn} (1..9):"
+    slow_typing(text, 1)
+    loop do
+      answer = gets.chomp!.to_i
+      return answer if (1..9).include? answer
+
+      puts 'Please enter a number between 1 and 9...'
+    end
+  end
+end
+
 def greeting
   puts 'Welcome to TicTacToe game!'
 end
 
 def create_board
   Array.new(9, 0)
-end
-
-def question(turn)
-  turn = turn.even? ? 'X' : 'O'
-  text = "Now it is your turn #{turn}. Make your move! (1..9):"
-  slow_typing(text, 1)
-  loop do
-    answer = gets.chomp!.to_i
-    return answer if (1..9).include? answer
-
-    puts 'Please enter a number between 1 and 9...'
-  end
 end
 
 def play
