@@ -54,12 +54,19 @@ def play
 
   show_board(board)
 
-  9.times do |turn|
+  game_on = true
+  turn = 0
+  winner = false
+  while game_on
     print "\nThis is turn: #{turn + 1} out of 9\n "
     question(turn)
     puts '(Your move is displayed on the board below)'
     show_board(board)
+    turn += 1
+    winner = true if turn == 8
+    game_on = false if winner
   end
+  puts 'Game over, somebody has won!'
 end
 
 play
