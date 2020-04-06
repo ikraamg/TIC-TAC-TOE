@@ -149,5 +149,11 @@ class TicTacToe < Game
     @board[move - 1] = mark
   end
 
+  def check_game
+    return true if calculate_board.include?(30)
+    return true if calculate_board.include?(3)
+    return true unless @board.include?(0)
+  end
+
   
 end
