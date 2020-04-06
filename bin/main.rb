@@ -95,3 +95,15 @@ class Game
     Array.new(9, 0)
   end
 end
+
+class TicTacToe < Game
+  def initialize
+    super
+    @name = 'Tic Tac Toe'
+  end
+
+  def to_s
+    'This is a TIC TAC TOE game!'
+  end
+
+end
