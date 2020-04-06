@@ -69,7 +69,11 @@ class Game
 
   def player_names
     player1 = Player.new(ask('Enter player 1 name:'))
-    player2 = Player.new(ask('Enter player 2 name:'))
+    temp_name = ask('Enter player 2 name:')
+    while temp_name == player1.name 
+      temp_name = ask("This is the same as player one's name (#{player1.name}), please enter another name:")
+    end
+      player2 = Player.new(temp_name)
     @names = [player1.name, player2.name] * 5
   end
 
