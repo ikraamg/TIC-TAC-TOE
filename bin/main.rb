@@ -59,7 +59,10 @@ def play
   show_board(board)
 
   9.times do |turn|
+    print "\nThis is turn: #{turn + 1} out of 9\n "
     question(turn)
+    puts '(Your move is displayed on the board below)'
+    show_board(board)
   end
 end
 
