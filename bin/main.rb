@@ -31,14 +31,14 @@ def draw_grid(array)
   puts hypens
 end
 
-# def slow_typing(text, speed)
-#   text.size.times do |i|
-#     print text[i]
-#     sleep speed * 0.01
-#   end
-#   puts
-# end
-# 
+def slow_typing(text, speed)
+  text.size.times do |i|
+    print text[i]
+    sleep speed * 0.01
+  end
+  puts
+end
+
 # def question(turn)
 #   turn = turn.even? ? 'X' : 'O'
 #   text = "Make your move #{turn} (1..9):"
