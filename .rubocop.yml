@@ -1,35 +1,29 @@
 AllCops:
   Exclude:
-    - 'README.md'
-    - 'Guardfile'
-    - 'Rakefile'
-
+    - "bin/*"
+    - "db/**/*"
+    - "config/**/*"
+    - "Guardfile"
+    - "Rakefile"
   DisplayCopNames: true
 
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
+  Include: ["app/controllers/*"]
   Max: 20
 Metrics/AbcSize:
-  Max: 50
+  Include: ["app/controllers/*"]
+  Max: 30
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
   ExcludedMethods: ['describe']
-  Max: 30
 
 Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
-Style/EachForSimpleLoop:
-  Enabled: false
-Style/AndOr:
-  Enabled: false
-Style/DefWithParentheses:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  EnforcedStyle: never
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
@@ -37,7 +31,7 @@ Layout/ExtraSpacing:
   AllowForAlignment: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
-  EnforcedStyle: indented
+  EnforcedStyle: indented 
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
