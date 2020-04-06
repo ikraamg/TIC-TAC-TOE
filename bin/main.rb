@@ -106,4 +106,19 @@ class TicTacToe < Game
     'This is a TIC TAC TOE game!'
   end
 
+
+  private
+
+  def check_spot(move, turn)
+    if @board[move - 1].zero?
+      make_move(move, turn)
+    else
+      text = "Please make another move. That (#{move}) place is already taken!"
+      slow_typing(text, 0.5)
+      show_board_hint(@board)
+      'jump_next'
+    end
+  end
+
+ 
 end
