@@ -47,7 +47,7 @@ end
 module QuestionMaker
   def ask(text)
     puts_for_me text
-    gets.chomp!
+    gets_for_me
   end
 
   def question(turn)
@@ -55,7 +55,7 @@ module QuestionMaker
     text = "Make your move #{@names[turn]} (#{turn_sign}) (1..9):"
     slow_typing(text, 1)
     loop do
-      answer = gets.chomp!.to_i
+      answer = gets_for_me.to_i
       return answer if (1..9).include? answer
 
       puts_for_me 'Please enter a number between 1 and 9...'

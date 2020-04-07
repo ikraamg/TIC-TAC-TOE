@@ -11,5 +11,9 @@ def puts_for_me(item = nil)
   puts item
 end
 
+def gets_for_me
+  gets.chomp!
+end
+
 new_game = TicTacToe.new
 new_game.play
