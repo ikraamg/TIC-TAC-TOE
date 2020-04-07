@@ -1,22 +1,19 @@
 require_relative 'game.rb'
 
 class TicTacToe < Game
-  def initialize
+  def initialize(name1, name2)
     super
     @name = 'Tic Tac Toe'
   end
 
   def to_s
-    'This is a TIC TAC TOE game!'
+    "Welcome\nThis is a TIC TAC TOE game!"
   end
 
   def check_spot(move, turn)
     if @board[move - 1].zero?
       make_move(move, turn)
     else
-      text = "Please make another move. That (#{move}) place is already taken!"
-      slow_typing(text, 0.5)
-      show_board_hint(@board)
       'jump_next'
     end
   end
