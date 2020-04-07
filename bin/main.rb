@@ -68,17 +68,18 @@ class Game
   end
 
   def player_names
-    player1 = Player.new(ask('Enter player 1 name:'))
+    @player1 = Player.new(ask('Enter player 1 name:'))
     temp_name = ask('Enter player 2 name:')
-    while temp_name == player1.name
-      temp_name = ask("This is the same as player one's name (#{player1.name}), please enter another name:")
+    while temp_name == @player1.name
+      temp_name = ask("This is the same as player one's name (#{@player1.name}), please enter another name:")
     end
-    player2 = Player.new(temp_name)
-    @names = [player1.name, player2.name] * 5
+    @player2 = Player.new(temp_name)
+    @names = [@player1.name, @player2.name] * 5
   end
 
   def play
     greeting
+    dialog
     9.times do |turn|
       show_board(@board)
       move = question(turn)
@@ -99,8 +100,19 @@ class Game
     end
     end_message
   end
-
+  
   private
+
+  def dialog
+    dialog_text = @player1.talk_with(@player2)
+    (dialog_text.size / 2).times do |i|
+      print "#{@player1.name}: "
+      print " #{slow_typing(dialog_text[i * 2], 1)}\n"
+      print "#{@player2.name}: "
+      print " #{slow_typing(dialog_text[i * 2 + 1], 1)}\n"
+      slow_typing("...", 20)
+    end
+  end
 
   def greeting
     show_board_hint(@board)
@@ -189,3 +201,4 @@ end
 
 new_game = TicTacToe.new
 new_game.play
+
