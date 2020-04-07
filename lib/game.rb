@@ -20,23 +20,12 @@ class Game
   def play
     greeting
     dialog
-    9.times do |turn|
+    turn = 0
+    until check_game
       show_board(@board)
       move = question(turn)
       redo if check_spot(move, turn) == 'jump_next'
-      break if check_game == true
-    end
-    end_message
-  end
-
-  def auto_play(scenario)
-    greeting
-    9.times do |turn|
-      show_board(@board)
-      puts move = scenario[turn]
-      sleep 1
-      redo if check_spot(move, turn) == 'jump_next'
-      break if check_game == true
+      turn += 1
     end
     end_message
   end
