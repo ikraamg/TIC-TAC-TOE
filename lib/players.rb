@@ -7,14 +7,14 @@ class Player
 
   def talk_with(recipient)
     dialog = []
-    dialog << self.introduce_self[0]
+    dialog << introduce_self[0]
     dialog << recipient.introduce_self[1]
-    dialog << self.initiator_speech[0]
+    dialog << initiator_speech[0]
     dialog << recipient.initiator_speech[1]
-    dialog << self.ask_for_play(recipient)[0]
+    dialog << ask_for_play(recipient)[0]
     dialog << recipient.ask_for_play(self)[1]
   end
-  
+
   protected
 
   def introduce_self
@@ -22,7 +22,7 @@ class Player
   end
 
   def initiator_speech
-    ["Oh yesterday the weather was awesome!", "Omg yes! That was great!"]
+    ['Oh yesterday the weather was awesome!', 'Omg yes! That was great!']
   end
 
   def ask_for_play(recipient)

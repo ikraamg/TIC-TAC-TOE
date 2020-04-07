@@ -100,7 +100,7 @@ class Game
     end
     end_message
   end
-  
+
   private
 
   def dialog
@@ -110,7 +110,7 @@ class Game
       print " #{slow_typing(dialog_text[i * 2], 1)}\n"
       print "#{@player2.name}: "
       print " #{slow_typing(dialog_text[i * 2 + 1], 1)}\n"
-      slow_typing("...", 20)
+      slow_typing('...', 20)
     end
   end
 
@@ -201,4 +201,3 @@ end
 
 new_game = TicTacToe.new
 new_game.play
-
