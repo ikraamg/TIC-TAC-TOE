@@ -42,7 +42,7 @@ To get a local copy up and running follow these steps:
 
 ### Prerequisites
 
-- Ruby installed on local machine
+- Ruby installed on local machine: Please go to this [link](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby) if you need to install ruby
 
 ### Usage
 
