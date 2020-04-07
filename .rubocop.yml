@@ -6,10 +6,10 @@ AllCops:
 
   DisplayCopNames: true
 
-Lint/RaiseException:
-  Enabled: true
-Lint/StructNewOverride:
-  Enabled: true
+# Lint/RaiseException:
+#   Enabled: true
+# Lint/StructNewOverride:
+#   Enabled: true
 
 Layout/LineLength:
   Max: 120
