@@ -28,9 +28,11 @@ For a detailed explanation, please have a look at this [guide](https://www.wikih
 
 ## Live Link
 
-- You can quickly test and play this game by using the live link below. Once the link is opened, pressing run on the top of the page will start the game.
+- You can quickly test and play this game by using the live link below. Once the link is opened, pressing run on the top of the page will start the game. [Demo Link Milestone-4](https://repl.it/@kblycaglayan/TTTmilestone-3)
 
-[Demo Link Milestone-4](https://repl.it/@kblycaglayan/TTTmilestone-3)
+## Logic Flow between classes
+
+![ttt_diagram](https://user-images.githubusercontent.com/60448833/78653189-7089e180-78cb-11ea-95df-2f727ae3daff.jpg)
 
 ## Built With
 
