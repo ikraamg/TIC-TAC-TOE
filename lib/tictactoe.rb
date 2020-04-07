@@ -10,8 +10,6 @@ class TicTacToe < Game
     'This is a TIC TAC TOE game!'
   end
 
-  private
-
   def check_spot(move, turn)
     if @board[move - 1].zero?
       make_move(move, turn)
@@ -58,14 +56,6 @@ class TicTacToe < Game
     return true unless @board.include?(0)
 
     false
-  end
-
-  def end_message
-    puts_for_me '______________________'
-    puts_for_me 'game over'.upcase
-    show_board(@board)
-    puts_for_me win_message
-    puts_for_me '______________________'
   end
 
   def win_message
