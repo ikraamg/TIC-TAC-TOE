@@ -1,10 +1,10 @@
 module Visualizer
   def slow_typing(text, speed)
     text.size.times do |i|
-      print text[i]
+      print_for_me text[i]
       sleep speed * 0.01
     end
-    puts
+    puts_for_me
   end
   BOARD_CYPHER = { "0": ' . ', "1": ' X ', '10': ' O ' }.freeze
   def show_board(board)
@@ -30,17 +30,23 @@ module Visualizer
   def draw_grid(array)
     hypens = '-------------------'
     hypens_w_nl = "-------------------\n"
-    puts "\n  " + hypens
+    puts_for_me "\n  " + hypens
     3.times do |i|
-      print '  | ', array[i * 3], ' | ', array[i * 3 + 1], ' | ', array[i * 3 + 2], " |\n  #{hypens_w_nl if i < 2}"
+      print_for_me '  | '
+      print_for_me array[i * 3]
+      print_for_me ' | '
+      print_for_me array[i * 3 + 1]
+      print_for_me ' | '
+      print_for_me array[i * 3 + 2]
+      print_for_me " |\n  #{hypens_w_nl if i < 2}"
     end
-    puts hypens
+    puts_for_me hypens
   end
 end
 
 module QuestionMaker
   def ask(text)
-    puts text
+    puts_for_me text
     gets.chomp!
   end
 
@@ -52,7 +58,7 @@ module QuestionMaker
       answer = gets.chomp!.to_i
       return answer if (1..9).include? answer
 
-      puts 'Please enter a number between 1 and 9...'
+      puts_for_me 'Please enter a number between 1 and 9...'
     end
   end
 end

@@ -61,11 +61,11 @@ class TicTacToe < Game
   end
 
   def end_message
-    puts '______________________'
-    puts 'game over'.upcase
+    puts_for_me '______________________'
+    puts_for_me 'game over'.upcase
     show_board(@board)
-    puts win_message
-    puts '______________________'
+    puts_for_me win_message
+    puts_for_me '______________________'
   end
 
   def win_message

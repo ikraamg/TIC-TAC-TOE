@@ -35,17 +35,17 @@ class Game
   def dialog
     dialog_text = @player1.talk_with(@player2)
     (dialog_text.size / 2).times do |i|
-      print "#{@player1.name}: "
-      print " #{slow_typing(dialog_text[i * 2], 1)}\n"
-      print "#{@player2.name}: "
-      print " #{slow_typing(dialog_text[i * 2 + 1], 1)}\n"
+      print_for_me "#{@player1.name}: "
+      print_for_me " #{slow_typing(dialog_text[i * 2], 1)}\n"
+      print_for_me "#{@player2.name}: "
+      print_for_me " #{slow_typing(dialog_text[i * 2 + 1], 1)}\n"
       slow_typing('...', 20)
     end
   end
 
   def greeting
     show_board_hint(@board)
-    puts "Welcome to #{@name} game..."
+    puts_for_me "Welcome to #{@name} game..."
     player_names
   end
 
