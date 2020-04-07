@@ -6,13 +6,31 @@
 
 > This game is a virtual implementation of the classic tic-tac-toe game.
 
-This game is played on a 3 x 3 grid between two players. The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
+- This game is played on a 3 x 3 grid between two players.
+- Each player will take turn in placing their letter which is an "X" or "O" onto the grid boar. Placed by selecting the numbers 1 to 9 when prompted.
+  -------------------
+  | (1) | (2) | (3) |
+  -------------------
+  | (4) | (5) | (6) |
+  -------------------
+  | (7) | (8) | (9) |
+  -------------------
+- The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
+  -------------------
+  |  O  |  X  |  O  | 
+  -------------------
+  |  X  |  X  |  X  |  --- *Player 'X' wins with this row!*
+  -------------------
+  |  O  |  O  |  X  |
+  -------------------
 
-_In this step we completed the full game-play of tic-tac-toe. It starts by requesting the names of the two players and then each player has an opportunity to play until a winner is declared by the game_
+For a detailed explanation, please have a look at this [guide](https://www.wikihow.com/Play-Tic-Tac-Toe).
 
 ## Live Link
 
-[Demo Link Milestone-3](https://repl.it/@kblycaglayan/TTTmilestone-3)
+- You can quickly test and play this game by using the live link below. Once the link is opened, pressing run on the top of the page will start the game.
+
+[Demo Link Milestone-4](https://repl.it/@kblycaglayan/TTTmilestone-3)
 
 ## Built With
 
