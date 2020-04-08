@@ -6,8 +6,17 @@
 
 > This game is a virtual implementation of the classic tic-tac-toe game.
 
-- This game is played on a 3 x 3 grid between two players.
-- Each player will take turn in placing their letter which is an "X" or "O" onto the grid boar. Placed by selecting the numbers 1 to 9 when prompted.
+## RULES FOR TIC-TAC-TOE
+
+1. The game is played on a grid that's 3 squares by 3 squares.
+
+2. You are X, your friend is O. Players take turns putting their marks in empty squares.
+
+3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+
+4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+
+5. In this virtual implementation, you and your friend can place a mark by selecting from the numbers 1 to 9 when prompted. This is illustrated below:
 
 
 | (1) | (2) | (3) |
@@ -17,14 +26,14 @@
 | (7) | (8) | (9) |
 -------------------
 
-- The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
+6. A winning position would like the image below at the end. As soon as someone gets three of their marks in a row, the game ends.
 
 
 |  O  |  X  |  O  | 
 -------------------
 |  X  |  X  |  X  |  --- *Player 'X' wins with this row!*
 -------------------
-|  O  |  O  |  X  |
+|  O  |  O  |  O  |
 -------------------
 
 For a detailed explanation, please have a look at this [guide](https://www.wikihow.com/Play-Tic-Tac-Toe).
