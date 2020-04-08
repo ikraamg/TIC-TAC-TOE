@@ -98,10 +98,17 @@ def check_name_equality(player1, temp_name)
   temp_name
 end
 
+def dialog(name1, name2)
+  player1 = Player.new(name1)
+  player2 = Player.new(name2)
+  player1.talk_with(player2)
+end
+
 names = player_names
 new_game = TicTacToe.new(names[0], names[1])
 puts new_game
 new_game.greeting
+puts dialog(names[0], names[1])
 turn = 0
 until new_game.check_game
   show_board(new_game.board)

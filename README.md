@@ -6,13 +6,41 @@
 
 > This game is a virtual implementation of the classic tic-tac-toe game.
 
-This game is played on a 3 x 3 grid between two players. The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
+## RULES FOR TIC-TAC-TOE
 
-_In this step we completed the full game-play of tic-tac-toe. It starts by requesting the names of the two players and then each player has an opportunity to play until a winner is declared by the game_
+1. The game is played on a grid that's 3 squares by 3 squares.
+
+2. You are X, your friend is O. Players take turns putting their marks in empty squares.
+
+3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+
+4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+
+5. In this virtual implementation, you and your friend can place a mark by selecting from the numbers 1 to 9 when prompted. This is illustrated below:
+
+
+| (1) | (2) | (3) |
+-------------------
+| (4) | (5) | (6) |
+-------------------
+| (7) | (8) | (9) |
+-------------------
+
+6. A winning position would like the image below at the end. As soon as someone gets three of their marks in a row, the game ends.
+
+
+|  O  |  X  |  O  | 
+-------------------
+|  X  |  X  |  X  |  --- *Player 'X' wins with this row!*
+-------------------
+|  O  |  O  |  O  |
+-------------------
+
+For a detailed explanation, please have a look at this [guide](https://www.wikihow.com/Play-Tic-Tac-Toe).
 
 ## Live Link
 
-[Demo Link Milestone-3](https://repl.it/@kblycaglayan/TTTmilestone-3)
+- You can quickly test and play this game by using the live link below. Once the link is opened, pressing run on the top of the page will start the game. [Demo Link Milestone-4](https://repl.it/@kblycaglayan/TTTmilestone-3)
 
 ## Built With
 
@@ -24,7 +52,7 @@ To get a local copy up and running follow these steps:
 
 ### Prerequisites
 
-- Ruby installed on local machine
+- Ruby installed on local machine: Please go to this [link](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby) if you need to install ruby
 
 ### Usage
 
