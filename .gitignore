@@ -9,7 +9,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
-bin/test.rb
+/bin/test.rb
 
 # Used by dotenv library to load environment variables.
 # .env

@@ -8,12 +8,11 @@
 
 This game is played on a 3 x 3 grid between two players. The aim is for one of the two players to have 3 of their characters("X" or "O") in a row or diagonally. The first player to do so, wins the game!
 
-_In this step we created basic game flow which takes an input from the player and prompts a message with board layout. We are not diving into game details yet._
+_In this step we completed the full game-play of tic-tac-toe. It starts by requesting the names of the two players and then each player has an opportunity to play until a winner is declared by the game_
 
 ## Live Link
 
-[Demo Link Milestone-2](https://repl.it/@kblycaglayan/TTTmilestone2)
-
+[Demo Link Milestone-3](https://repl.it/@kblycaglayan/TTTmilestone-3)
 
 ## Built With
 
@@ -30,6 +29,11 @@ To get a local copy up and running follow these steps:
 ### Usage
 
 - Fork/Clone this project to your local machine
+- Run  in your terminal using:
+
+``` Ruby
+  "ruby <location_of_repo>/bin/main.rb"
+```
 
 ## Authors
 
