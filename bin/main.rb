@@ -104,23 +104,26 @@ def dialog(name1, name2)
   player1.talk_with(player2)
 end
 
-names = player_names
-new_game = TicTacToe.new(names[0], names[1])
-puts new_game
-new_game.greeting
-puts dialog(names[0], names[1])
-turn = 0
-until new_game.check_game
-  show_board(new_game.board)
-  question(turn, new_game)
-  move = answer_check
-  if new_game.check_spot(move, turn) == 'jump_next'
-    text = "Please make another move. That (#{move}) place is already taken!"
-    slow_typing(text, 0.5)
-    show_board_hint(new_game.board)
-    redo
-  else
-    turn += 1
+def play
+  names = player_names
+  new_game = TicTacToe.new(names[0], names[1])
+  puts new_game
+  new_game.greeting
+  puts dialog(names[0], names[1])
+  turn = 0
+  until new_game.check_game
+    show_board(new_game.board)
+    question(turn, new_game)
+    move = answer_check
+    if new_game.check_spot(move, turn) == 'jump_next'
+      text = "Please make another move. That (#{move}) place is already taken!"
+      slow_typing(text, 0.5)
+      show_board_hint(new_game.board)
+      redo
+    else
+      turn += 1
+    end
   end
+  end_message(new_game)
 end
-end_message(new_game)
+
