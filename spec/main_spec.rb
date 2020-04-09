@@ -77,6 +77,23 @@ describe TicTacToe do
       expect(start_game.check_game).to be false
     end
   end
+
+  describe '#win_message' do
+    it 'returns a string when X wins' do
+      start_game.board = [1, 1, 1, 0, 0, 0, 0, 0, 0]
+      expect(start_game.win_message).to eq("#{start_game.names[0]} WINS!")
+    end
+
+    it 'returns a string when Y wins' do
+      start_game.board = [10, 10, 10, 0, 0, 0, 0, 0, 0]
+      expect(start_game.win_message).to eq("#{start_game.names[1]} WINS!")
+    end
+
+    it 'returns a string when game is a draw' do
+      start_game.board = [1, 1, 10, 10, 10, 1, 1, 10, 1]
+      expect(start_game.win_message).to eq("THAT'S A DRAW!")
+    end
+  end
 end
 
 tictactoe = TicTacToe.new('Ikraam', 'Kubilay')
