@@ -5,7 +5,7 @@ describe Game do
   let(:names_pentatonic) { %w[Ikraam Kubilay] * 5 }
   player = Game.new('Ikraam', 'Kubilay')
   describe '#initialize' do
-    it 'Reurns an ' do
+    it "Doesn't raise an error when takes two arguments" do
       expect { Game.new('Ikraam', 'Kubilay') }.not_to raise_error(ArgumentError)
     end
   end
