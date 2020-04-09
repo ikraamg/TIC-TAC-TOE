@@ -18,17 +18,6 @@ class TicTacToe < Game
     end
   end
 
-  def calculate_board
-    sum_of_lines = []
-    sum_of_lines = calculate_linear(sum_of_lines)
-    calculte_diagonal(sum_of_lines)
-  end
-  
-  def make_move(move, turn)
-    mark = turn.even? ? 1 : 10
-    @board[move - 1] = mark
-  end
-  
   def check_game
     return true if calculate_board.include?(30)
     return true if calculate_board.include?(3)
@@ -45,6 +34,17 @@ class TicTacToe < Game
   end
 
   private
+
+  def calculate_board
+    sum_of_lines = []
+    sum_of_lines = calculate_linear(sum_of_lines)
+    calculte_diagonal(sum_of_lines)
+  end
+
+  def make_move(move, turn)
+    mark = turn.even? ? 1 : 10
+    @board[move - 1] = mark
+  end
 
   def calculate_linear(array)
     3.times do |i|
