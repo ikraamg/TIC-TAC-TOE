@@ -13,15 +13,38 @@ class TicTacToe < Game
   def check_spot(move, turn)
     if @board[move - 1].zero?
       make_move(move, turn)
+      'moved'
     else
       'jump_next'
     end
   end
 
+  def check_game
+    return true if calculate_board.include?(30)
+    return true if calculate_board.include?(3)
+    return true unless @board.include?(0)
+
+    false
+  end
+
+  def win_message
+    return "#{@names[0]} WINS!" if calculate_board.include?(3)
+    return "#{@names[1]} WINS!" if calculate_board.max == 30
+
+    "That's a draw!".upcase
+  end
+
+  private
+
   def calculate_board
     sum_of_lines = []
     sum_of_lines = calculate_linear(sum_of_lines)
     calculte_diagonal(sum_of_lines)
+  end
+
+  def make_move(move, turn)
+    mark = turn.even? ? 1 : 10
+    @board[move - 1] = mark
   end
 
   def calculate_linear(array)
@@ -40,25 +63,5 @@ class TicTacToe < Game
       array << sum_diagonal
     end
     array
-  end
-
-  def make_move(move, turn)
-    mark = turn.even? ? 1 : 10
-    @board[move - 1] = mark
-  end
-
-  def check_game
-    return true if calculate_board.include?(30)
-    return true if calculate_board.include?(3)
-    return true unless @board.include?(0)
-
-    false
-  end
-
-  def win_message
-    return "#{@names[0]} WINS!" if calculate_board.include?(3)
-    return "#{@names[1]} WINS!" if calculate_board.max == 30
-
-    "That's a draw!".upcase
   end
 end
