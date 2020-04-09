@@ -27,8 +27,8 @@ end
 describe TicTacToe do
   start_game = TicTacToe.new('Ikraam', 'Kubilay')
   describe '#initialize' do
-    it 'Reurns an ' do
-      expect { TicTacToe.new('Ikraam', 'Kubilay') }.not_to raise_error(ArgumentError)
+    it 'Returns an ' do
+      expect { TicTacToe.new('Ikraam', 'Kubilay') }.not_to raise_error
     end
   end
   describe '#names' do
@@ -52,8 +52,29 @@ describe TicTacToe do
     end
   end
   describe '#check-spot' do
+    it 'it runs make move method if the spot is 0' do
+      expect(start_game.check_spot(1, 1)).to eq('moved')
+    end
     it 'returns a string when the spot is already occupied' do
-      expect start_game.check_spot(1, 1).to eq('jump_next')
+      expect(start_game.check_spot(1, 1)).to eq('jump_next')
+    end
+  end
+  describe '#check_game' do
+    it 'returns true if the X wins' do
+      start_game.board = [1, 1, 1, 0, 0, 0, 0, 0, 0]
+      expect(start_game.check_game).to be true
+    end
+    it 'returns true if the Y wins' do
+      start_game.board = [10, 10, 10, 0, 0, 0, 0, 0, 0]
+      expect(start_game.check_game).to be true
+    end
+    it 'returns true if it is a draw' do
+      start_game.board = [1, 1, 10, 10, 10, 1, 1, 10, 1]
+      expect(start_game.check_game).to be true
+    end
+    it 'returns false if the game is goin on' do
+      start_game.board = [1, 10, 0, 0, 0, 0, 0, 0, 0]
+      expect(start_game.check_game).to be false
     end
   end
 end

@@ -13,6 +13,7 @@ class TicTacToe < Game
   def check_spot(move, turn)
     if @board[move - 1].zero?
       make_move(move, turn)
+      'moved'
     else
       'jump_next'
     end
