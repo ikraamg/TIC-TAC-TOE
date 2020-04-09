@@ -25,6 +25,9 @@ describe Game do
 end
 
 describe TicTacToe do
+  let(:x_wins) { [1, 1, 1, 0, 0, 0, 0, 0, 0] }
+  let(:y_wins) { [10, 10, 10, 0, 0, 0, 0, 0, 0] }
+  let(:draw) { [1, 1, 10, 10, 10, 1, 1, 10, 1] }
   start_game = TicTacToe.new('Ikraam', 'Kubilay')
   describe '#initialize' do
     it 'Returns an ' do
@@ -61,15 +64,15 @@ describe TicTacToe do
   end
   describe '#check_game' do
     it 'returns true if the X wins' do
-      start_game.board = [1, 1, 1, 0, 0, 0, 0, 0, 0]
+      start_game.board = x_wins
       expect(start_game.check_game).to be true
     end
     it 'returns true if the Y wins' do
-      start_game.board = [10, 10, 10, 0, 0, 0, 0, 0, 0]
+      start_game.board = y_wins
       expect(start_game.check_game).to be true
     end
     it 'returns true if it is a draw' do
-      start_game.board = [1, 1, 10, 10, 10, 1, 1, 10, 1]
+      start_game.board = draw
       expect(start_game.check_game).to be true
     end
     it 'returns false if the game is goin on' do
@@ -80,18 +83,41 @@ describe TicTacToe do
 
   describe '#win_message' do
     it 'returns a string when X wins' do
-      start_game.board = [1, 1, 1, 0, 0, 0, 0, 0, 0]
+      start_game.board = x_wins
       expect(start_game.win_message).to eq("#{start_game.names[0]} WINS!")
     end
 
     it 'returns a string when Y wins' do
-      start_game.board = [10, 10, 10, 0, 0, 0, 0, 0, 0]
+      start_game.board = y_wins
       expect(start_game.win_message).to eq("#{start_game.names[1]} WINS!")
     end
 
     it 'returns a string when game is a draw' do
-      start_game.board = [1, 1, 10, 10, 10, 1, 1, 10, 1]
+      start_game.board = draw
       expect(start_game.win_message).to eq("THAT'S A DRAW!")
+    end
+  end
+end
+
+describe Player do
+  new_player = Player.new('Ikraam')
+  player2 = Player.new('Kubilay')
+  describe '#initialize' do
+    it 'Returns an ' do
+      expect { Player.new('Ikraam') }.not_to raise_error
+    end
+  end
+  describe '#talk_with' do
+    it 'Returns an array of speech' do
+      speech = [
+        "Hello, I am #{new_player.name}",
+        "Hi! I am #{player2.name} nice to meet you!",
+        'Oh yesterday the weather was awesome!',
+        'Omg yes! That was great!',
+        "Do you know about this game called TicTacToe #{player2.name}?",
+        "Oh yes I've heard about it let's play!!!"
+      ]
+      expect(new_player.talk_with(player2)).to eq(speech)
     end
   end
 end

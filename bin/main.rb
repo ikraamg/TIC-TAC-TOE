@@ -10,6 +10,7 @@ def slow_typing(text, speed)
   end
   puts
 end
+
 BOARD_CYPHER = { "0": ' . ', "1": ' X ', '10': ' O ' }.freeze
 def show_board(board)
   board_show = board.clone
