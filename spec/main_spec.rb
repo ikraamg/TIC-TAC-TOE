@@ -122,8 +122,22 @@ describe Player do
   end
 end
 
-tictactoe = TicTacToe.new('Ikraam', 'Kubilay')
-print tictactoe.methods.sort - Object.methods
-puts
-player = Player.new('Kubilay')
-print player.methods.sort - Object.methods
+describe '#turn_sign' do
+  it 'returns X when even integer passed' do
+    expect(turn_sign(2)).to eq('X')
+  end
+  it 'returns O when even integer passed' do
+    expect(turn_sign(1)).to eq('O')
+  end
+end
+
+describe '#check_name' do
+  let(:empty_string) { '' }
+  let(:name1) { 'Kubilay' }
+  it 'returns default name' do
+    expect(check_name(empty_string, 'Kubilay1')).to eq('Kubilay1')
+  end
+  it 'returns name' do
+    expect(check_name(name1, 'Kubilay')).to eq('Kubilay')
+  end
+end
