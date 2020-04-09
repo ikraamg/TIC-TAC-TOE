@@ -126,4 +126,3 @@ def play
   end
   end_message(new_game)
 end
-

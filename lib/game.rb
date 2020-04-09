@@ -10,7 +10,7 @@ class Game
   def greeting
     show_board_hint(@board)
   end
-  
+
   private
 
   def create_board
