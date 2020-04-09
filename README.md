@@ -4,7 +4,9 @@
 
 # TIC-TAC-TOE
 
-> This game is a virtual implementation of the classic tic-tac-toe game.
+> This game is a virtual implementation of the classic tic-tac-toe game. 
+
+> All public class methods tested with RSpec.
 
 ## RULES FOR TIC-TAC-TOE
 
@@ -45,6 +47,7 @@ For a detailed explanation, please have a look at this [guide](https://www.wikih
 ## Built With
 
 - Ruby
+- RSpec
 
 ## Getting Started
 
@@ -53,11 +56,13 @@ To get a local copy up and running follow these steps:
 ### Prerequisites
 
 - Ruby installed on local machine: Please go to this [link](https://www.theodinproject.com/courses/web-development-101/lessons/installing-ruby) if you need to install ruby
+- RSpec
 
 ### Usage
 
 - Fork/Clone this project to your local machine
 - Run  in your terminal using:
+- Run ```rspec``` in the terminal of your root directory to run the described tests
 
 ``` Ruby
   "ruby <location_of_repo>/bin/main.rb"
