@@ -1,6 +1,8 @@
 require_relative '../bin/main.rb'
 
 describe Game do
+  let(:default_board) { Array.new(9, 0) }
+  let(:names_pentatonic) { %w[Ikraam Kubilay] * 5 }
   player = Game.new('Ikraam', 'Kubilay')
   describe '#initialize' do
     it 'Reurns an ' do
@@ -9,12 +11,12 @@ describe Game do
   end
   describe '#names' do
     it 'Reurns an array with two inputs and 5 times' do
-      expect(player.names).to eq(%w[Ikraam Kubilay] * 5)
+      expect(player.names).to eq(names_pentatonic)
     end
   end
   describe '#board' do
     it 'returns an array with 9 integers of 0' do
-      expect(player.board).to eq(Array.new(9, 0))
+      expect(player.board).to eq(default_board)
     end
   end
   describe '#greeting' do
@@ -102,6 +104,16 @@ end
 describe Player do
   new_player = Player.new('Ikraam')
   player2 = Player.new('Kubilay')
+  let(:dialog) do
+    [
+      "Hello, I am #{new_player.name}",
+      "Hi! I am #{player2.name} nice to meet you!",
+      'Oh yesterday the weather was awesome!',
+      'Omg yes! That was great!',
+      "Do you know about this game called TicTacToe #{player2.name}?",
+      "Oh yes I've heard about it let's play!!!"
+    ]
+  end
   describe '#initialize' do
     it 'Returns an ' do
       expect { Player.new('Ikraam') }.not_to raise_error
@@ -109,15 +121,7 @@ describe Player do
   end
   describe '#talk_with' do
     it 'Returns an array of speech' do
-      speech = [
-        "Hello, I am #{new_player.name}",
-        "Hi! I am #{player2.name} nice to meet you!",
-        'Oh yesterday the weather was awesome!',
-        'Omg yes! That was great!',
-        "Do you know about this game called TicTacToe #{player2.name}?",
-        "Oh yes I've heard about it let's play!!!"
-      ]
-      expect(new_player.talk_with(player2)).to eq(speech)
+      expect(new_player.talk_with(player2)).to eq(dialog)
     end
   end
 end
