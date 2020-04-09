@@ -75,9 +75,9 @@ describe TicTacToe do
       start_game.board = draw
       expect(start_game.check_game).to be true
     end
-    it 'returns false if the game is goin on' do
+    it "doesn't return true if the game is goin on" do
       start_game.board = [1, 10, 0, 0, 0, 0, 0, 0, 0]
-      expect(start_game.check_game).to be false
+      expect(start_game.check_game).not_to be true
     end
   end
 
